@@ -1,0 +1,162 @@
+env:
+  TERM: xterm-256color
+  WINIT_HIDPI_FACTOR: '1'
+window:
+  dimensions:
+    columns: 120
+    lines: 24
+  padding:
+    x: 10
+    y: 10
+  dynamic_padding: true
+  decorations: full
+  startup_mode: Maximized
+scrolling:
+  history: 10000
+  multiplier: 3
+font:
+  normal:
+    family: Liberation Mono
+    style: Regular
+  bold:
+    family: Liberation Mono
+    style: Medium
+  size: 12
+  offset:
+    x: 0
+    'y': 0
+  glyph_offset:
+    x: 0
+    'y': 0
+draw_bold_text_with_bright_colors: false
+# Base16 Gruvbox dark, hard 256 - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+colors:
+  # Default colors
+  primary:
+    background: '0x1d2021'
+    foreground: '0xd5c4a1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d2021'
+    cursor: '0xd5c4a1'
+
+  # Normal colors
+  normal:
+    black:   '0x1d2021'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xd5c4a1'
+
+  # Bright colors
+  bright:
+    black:   '0x665c54'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xfbf1c7'
+
+  indexed_colors:
+    - { index: 16, color: '0xfe8019' }
+    - { index: 17, color: '0xd65d0e' }
+    - { index: 18, color: '0x3c3836' }
+    - { index: 19, color: '0x504945' }
+    - { index: 20, color: '0xbdae93' }
+    - { index: 21, color: '0xebdbb2' }
+bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: '0xffffff'
+background_opacity: .9
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+cursor:
+  style: Block
+  unfocused_hollow: true
+live_config_reload: true
+working_directory: None
+alt_send_esc: true
+debug:
+  render_timer: false
+  persistent_logging: false
+  log_level: Warn
+  print_events: false
+  ref_test: false
+mouse:
+  double_click:
+    threshold: 300
+  triple_click:
+    threshold: 300
+  hide_when_typing: false
+  url:
+    launcher:
+      program: xdg-open
+    modifiers: None
+mouse_bindings:
+  - mouse: Middle
+    action: PasteSelection
+key_bindings:
+  - key: V
+    mods: Control|Shift
+    action: Paste
+  - key: C
+    mods: Control|Shift
+    action: Copy
+  - key: Insert
+    mods: Shift
+    action: PasteSelection
+  - key: Delete
+    chars: "\e[3~"
+  - key: Key0
+    mods: Control
+    action: ResetFontSize
+  - key: Equals
+    mods: Control
+    action: IncreaseFontSize
+  - key: Add
+    mods: Control
+    action: IncreaseFontSize
+  - key: Subtract
+    mods: Control
+    action: DecreaseFontSize
+  - key: Minus
+    mods: Control
+    action: DecreaseFontSize
+  - key: Return
+    mods: Alt
+    action: ToggleFullscreen
+  - key: Paste
+    action: Paste
+  - key: Copy
+    action: Copy
+  - key: L
+    mods: Control
+    action: ClearLogNotice
+  - key: L
+    mods: Control
+    chars: "\f"
+  - key: PageUp
+    mods: Shift
+    action: ScrollPageUp
+    mode: ~Alt
+  - key: PageDown
+    mods: Shift
+    action: ScrollPageDown
+    mode: ~Alt
+  - key: Home
+    mods: Shift
+    action: ScrollToTop
+    mode: ~Alt
+  - key: End
+    mods: Shift
+    action: ScrollToBottom
+    mode: ~Alt
